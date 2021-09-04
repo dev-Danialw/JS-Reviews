@@ -57,3 +57,25 @@ const showPerson = (person) => {
   job.textContent = item.job;
   info.textContent = item.text;
 };
+
+//  show next&prev person
+nextBtn.addEventListener("click", () => {
+  cuurentItem++;
+  if (cuurentItem > reviews.length - 1) {
+    cuurentItem = 0;
+  }
+  showPerson(cuurentItem);
+});
+
+prevBtn.addEventListener("click", () => {
+  cuurentItem--;
+  if (cuurentItem < 0) {
+    cuurentItem = reviews.length - 1;
+  }
+  showPerson(cuurentItem);
+});
+
+randomBtn.addEventListener("click", () => {
+  let randomReview = Math.floor(Math.random() * reviews.length);
+  showPerson(randomReview);
+});
