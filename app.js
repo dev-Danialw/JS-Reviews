@@ -45,10 +45,15 @@ let cuurentItem = 0;
 // load intial item
 
 window.addEventListener("DOMContentLoaded", () => {
-  const item = reviews[cuurentItem];
-  console.log("yo whats up!");
+  showPerson(cuurentItem);
+});
+
+//  show person on item
+
+const showPerson = (person) => {
+  const item = reviews[person];
   img.src = item.img;
   author.textContent = item.name;
   job.textContent = item.job;
   info.textContent = item.text;
-});
+};
